@@ -1,9 +1,9 @@
 # DB-project
 
 ## Contributor
-- Mateo Pico
-- Harishi Velavan
-- Nikolay Tsonev
+- Mateo Pico (front end developer)
+- Harishi Velavan (database developer)
+- Nikolay Tsonev (back end developer)
 
 This repo is for the documentation of our project and uploading the files for submission for Databases and Web services cours
 
