@@ -1,12 +1,8 @@
 CREATE TABLE Students (
     student_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-
-    --this part I added but should talk abt this later
-    email VARCHAR(255) NOT NULL UNIQUE, -- Secondary key using UNIQUE for easier updates
-    INDEX (email)  -- Creates an index on email as a secondary key
+    email VARCHAR(255) NOT NULL UNIQUE  -- UNIQUE constraint already creates an index
 );
-
 
 CREATE TABLE Preferences (
     preference_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -18,19 +14,16 @@ CREATE TABLE Preferences (
     FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );
 
-
 CREATE TABLE Questions (
     question_id INT AUTO_INCREMENT PRIMARY KEY,
     question_text VARCHAR(500) NOT NULL
 );
-
 
 CREATE TABLE College (
     college_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     servery VARCHAR(255) NOT NULL
 );
-
 
 CREATE TABLE Blocks (
     block_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -44,7 +37,6 @@ CREATE TABLE Blocks (
     FOREIGN KEY (college_id) REFERENCES College(college_id)
 );
 
-
 CREATE TABLE Results (
     result_id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT,
@@ -53,7 +45,6 @@ CREATE TABLE Results (
     FOREIGN KEY (block_id) REFERENCES Blocks(block_id)
 );
 
-
 CREATE TABLE Manager (
     manager_id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT,  -- Manager is also a student (foreign key from Students)
@@ -61,7 +52,6 @@ CREATE TABLE Manager (
     is_helpful BOOLEAN NOT NULL,
     FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );
-
 
 CREATE TABLE Blockmate (
     blockmate_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -73,13 +63,9 @@ CREATE TABLE Blockmate (
     FOREIGN KEY (block_id) REFERENCES Blocks(block_id)
 );
 
-
 CREATE TABLE Kitchen (
     kitchen_id INT AUTO_INCREMENT PRIMARY KEY,
     block_id INT,  -- Kitchen belongs to a block (foreign key from Blocks)
-    --check this part later
     availability BOOLEAN NOT NULL,  -- Whether the kitchen is available or not
     FOREIGN KEY (block_id) REFERENCES Blocks(block_id)
 );
-
-+
