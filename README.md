@@ -5,7 +5,7 @@
 - Harishi Velavan (database developer)
 - Nikolay Tsonev (back end developer)
 
-This repo is for the documentation of our project and uploading the files for submission for Databases and Web services cours
+This repo is for the documentation of our project and uploading the files for submission for Databases and Web services course
 
 
 ## Week 2
