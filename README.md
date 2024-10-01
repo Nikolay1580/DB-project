@@ -1,6 +1,6 @@
 # DB-project
 
-## Contributor
+## Contributors
 - Mateo Pico (front end developer)
 - Harishi Velavan (database developer)
 - Nikolay Tsonev (back end developer)
