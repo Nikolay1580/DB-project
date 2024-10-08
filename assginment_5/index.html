@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FindYourGspot</title>
-    <link rel="stylesheet" href="https://findyourgspot.eu" integrity="I DONT KNOW" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./style.css">
     <style>
         body {
@@ -48,6 +49,43 @@
             margin: 0 10px;
             color: white;
         }
+        /* Dropdown and Categories */
+        .category-selection {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .category-btn {
+            background-color: #f5793b;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .category-btn:hover {
+            background-color: #943f05;
+        }
+        /* Rankings Section */
+        #ranking-table {
+            display: none;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #943f05;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f7bf01;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -71,32 +109,33 @@
             <p>The Pleasure of Finding your Home</p>
         </div>
 
-        <!-- Purpose Section -->
+        <!-- Category Selection -->
         <div class="section">
-            <h2>Purpose and Functionality</h2>
-            <p>FindYourGspot is a campus-centric platform designed specifically for university students to rate and review various aspects of their campus experience. From colleges to dorm rooms and dining halls, students can find comprehensive ratings on cleanliness, noise levels, social life, and more.</p>
+            <h2>Select a Category</h2>
+            <div class="category-selection">
+                <button class="category-btn" onclick="showRankings('Rooms')">Rooms</button>
+                <button class="category-btn" onclick="showRankings('Kitchen')">Kitchen</button>
+                <button class="category-btn" onclick="showRankings('Study Areas')">Study Areas</button>
+            </div>
         </div>
 
-        <!-- Features Section -->
-        <div class="section">
-            <h2>Why It's Called "FindYourGspot"</h2>
-            <p>The name is a playful, memorable take on helping students find their ideal spot on campus, whether it’s a dorm, a servery, or a study area. The "G" stands for Great, Good, and Genuine, representing the best places on campus that fit students’ lifestyles.</p>
-        </div>
-
-        <!-- Slogan Section -->
-        <div class="section">
-            <h2>Slogan</h2>
-            <p><strong>"The Pleasure of Finding your Home"</strong> perfectly captures the joy of home-hunting, making the experience exciting and engaging.</p>
-        </div>
-
-        <!-- Color Scheme Section -->
-        <div class="section">
-            <h2>Color Scheme</h2>
-            <p>The FindYourGspot color scheme uses warm yellow and orange to create a welcoming and energetic feel. The soft cream adds balance and calm, reinforcing a positive and stress-free experience during the housing search.</p>
-            <div style="background-color: #f7bf01; color: #fff;">#f7bf01</div>
-            <div style="background-color: #f5793b; color: #fff;">#f5793b</div>
-            <div style="background-color: #fff6e1; color: #000;">#fff6e1</div>
-            <div style="background-color: #943f05; color: #fff;">#943f05</div>
+        <!-- Ranking Table Section -->
+        <div id="ranking-table">
+            <h2 id="category-title">Category Rankings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Cleanliness</th>
+                        <th>Distance from Class</th>
+                        <th>Quietness</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body">
+                    <!-- Rows will be dynamically added here based on category selection -->
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -109,6 +148,50 @@
             <i class="fab fa-twitter"></i>
         </div>
     </footer>
+
+    <!-- JavaScript for Dynamic Content -->
+    <script>
+        function showRankings(category) {
+            // Show the ranking table
+            document.getElementById('ranking-table').style.display = 'block';
+            document.getElementById('category-title').innerText = category + ' Rankings';
+
+            // Clear previous rankings
+            const rankingBody = document.getElementById('ranking-body');
+            rankingBody.innerHTML = '';
+
+            // Sample data for rankings
+            const rankings = {
+                'Rooms': [
+                    { name: 'Dorm A', cleanliness: '9/10', distance: '5 min', quietness: '8/10' },
+                    { name: 'Dorm B', cleanliness: '8/10', distance: '7 min', quietness: '7/10' },
+                    { name: 'Dorm C', cleanliness: '7/10', distance: '10 min', quietness: '6/10' },
+                ],
+                'Kitchen': [
+                    { name: 'Kitchen 1', cleanliness: '9/10', distance: '2 min', quietness: 'N/A' },
+                    { name: 'Kitchen 2', cleanliness: '8/10', distance: '3 min', quietness: 'N/A' },
+                ],
+                'Study Areas': [
+                    { name: 'Library', cleanliness: '10/10', distance: '5 min', quietness: '10/10' },
+                    { name: 'Study Hall', cleanliness: '8/10', distance: '3 min', quietness: '9/10' },
+                ]
+            };
+
+            // Populate the table with the selected category's data
+            rankings[category].forEach((item, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.name}</td>
+                        <td>${item.cleanliness}</td>
+                        <td>${item.distance}</td>
+                        <td>${item.quietness || 'N/A'}</td>
+                    </tr>
+                `;
+                rankingBody.innerHTML += row;
+            });
+        }
+    </script>
 
 </body>
 </html>
