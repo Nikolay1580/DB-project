@@ -1,4 +1,4 @@
--- Table for Students
+    -- Table for Students
 CREATE TABLE Students (
     student_id INT AUTO_INCREMENT PRIMARY KEY,
     student_u INT UNIQUE,  -- unique identifier

@@ -1,0 +1,19 @@
+/* todo: fix the linking to the HTML page */
+
+
+.main-gdpr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #792800;
+}
+
+
+.main-text-gdpr {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f5793b;
+    height: 100vh;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FindYourGspot</title>
+    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="index.js"></script> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./content/symbol-transp.png"
+                alt="FindYourGspot Logo"
+                class="logo-img">
+            </a>
+        </div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <a href="GDPR.html">GDPR</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="welcome-box">
+        <!-- Logo Section -->
+        <div class="welcome-text">
+            <h1>FindYourGspot</h1>
+            <p>The Pleasure of Finding your Home</p>
+        </div>
+
+        <br>
+
+        <!-- Category Selection -->
+    </div>
+    
+    <div class="category">
+        <h2 class="category-text">Select a Category</h2>
+        <div class="category-selection">
+            <button class="category-btn" onclick="showRankings('Rooms')">Rooms</button>
+            <button class="category-btn" onclick="showRankings('Kitchen')">Kitchen</button>
+            <button class="category-btn" onclick="showRankings('Study Areas')">Study Areas</button>
+        </div>
+
+        <!-- Ranking Table Section -->
+        <div id="ranking-table">
+            <h2 id="category-title">Category Rankings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Cleanliness</th>
+                        <th>Distance from Class</th>
+                        <th>Quietness</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body">
+                    <!-- Rows will be dynamically added here based on category selection -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>&copy; 2024 FindYourGspot</div>
+        <div id="social-media">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+    </footer>
+</body>
+</html>

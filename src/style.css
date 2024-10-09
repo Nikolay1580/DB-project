@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff6e1;
+}
+
+#navbar {
+    background-color: #f5793b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+#navbar img {
+    height: 50px;
+
+}
+
+
+.welcome-box {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-img {
+    width: 10vh;
+    height: 10vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome-text h1 {
+    background: linear-gradient(to right, red, #f7bf01);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-text {
+    width: 1wh;
+}
+
+footer {
+    background-color: #f7bf01;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#social-media i {
+    margin: 0 10px;
+    color: white;
+}
+
+/* Dropdown and Categories */
+.category-selection {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.category-btn {
+    background-color: #f5793b;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.category-btn:hover {
+    background-color: #943f05;
+}
+
+/* Rankings Section */
+#ranking-table {
+    display: none;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #943f05;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f7bf01;
+    color: white;
+}
