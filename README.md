@@ -31,3 +31,6 @@ Because of github pages, the index file must always be in the root of the direct
 <p align="center">figure 2: Homepage</p>
 
 for now the website looks like this but will be changed and improved on in future weeks by adding more features and interactions for the usrer. 
+
+
+hello world, this was added by harishi
