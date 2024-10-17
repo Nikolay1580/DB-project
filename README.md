@@ -46,7 +46,7 @@ For now the server only responds with a success or failure and then notifies the
 
 <div style="text-align: center;">
     <video width="320" height="240" controls>
-    <source src="./assignment_5/demo-of-ajax.mp4" type="video/mp4">
+    <source src="./assignment_5/demo-of-ajax.webm" type="video/mp4">
     Your browser does not support the video tag.
     </video>
 </div>
