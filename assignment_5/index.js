@@ -68,7 +68,7 @@ function submitForm() {
      * data was sent and recieved successfully. In the futture the server will
      * send an HTML page back with the best block
      */
-    fetch('http://localhost/index.php', { // modify @Harishi0375
+    fetch('vharishi@5.75.182.107', { // modify @Harishi0375
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
