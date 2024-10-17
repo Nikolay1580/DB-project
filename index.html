@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="./docs/index.js"></script>
     <link rel="stylesheet" href="./docs/style.css">
+    <style>
+        #input-form { display: none; }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -35,45 +38,89 @@
             <h1>FindYourGspot</h1>
             <p>The Pleasure of Finding your Home</p>
         </div>
-
         <br>
 
-        <!-- Category Selection -->
+    <!-- this gives a breif description and then procceds to the form -->
+    </div id="before-form" class="before-form">      
+        <h2 id="before-form-text" class="before-form-text">
+            Everyone deserves to call their place Home...sadly this is not always the case.
+            This is why we at Findyourgspot have made this form for you to find the college and block
+            that best fits your personality and one that you can call home.
+        </h2>
+        <button id="next-button" class="before-form-button" type="button" onclick="showForm()">Next</button>
+    <div>
+
+
     </div>
+    <!-- Input form that when submited send an AJAX to the back_end.php file which for now 
+        just sends a error or suscess message. The inpput habndling is done on the front-end
+        to not waste bandwith sending incorrect data
+    -->
+    <form id="input-form" class="input-form">
+        <div class="slider-test">
+            <label class="slider-prompt">How much do you care about food quality at the servery?</label>
+            
+            <input class="slider" type="range" id="slider-js" name="servery" min="-100" max="100" value="0">
+            <div class="slider-labels">
+                <span>Not</span>
+                <span>Neutral</span>
+                <span>Very</span>
+            </div>
+            
+            <label  class="slider-prompt">How much do you care about the CO members friendliness?</label>
+            
+            <input class="slider" type="range" id="slider-js" name="CO-friendly" min="-100" max="100" value="0">
+            <div class="slider-labels">
+                <span>Meh</span>
+                <span>Neutral</span>
+                <span>Very</span>
+            </div>
 
-    <!-- this is for the input form -->
+            <label class="slider-prompt">How much do you care about the CO members strictness?</label>
+            
+            <input class="slider" type="range" id="slider-js" name="CO-strict" min="-100" max="100" value="0">
+            <div class="slider-labels">
+                <span>Meh</span>
+                <span>Neutral</span>
+                <span>Very</span>
+            </div>
 
-    <form action="submit_form.php" method="POST">
-        
+            <label class="slider-prompt">What is the ideal level of activity in your block?</label>
+            <input class="slider" type="range" id="slider-js" name="activity" min="-100" max="100" value="0">
+            <div class="slider-labels">
+                <span>Meh</span>
+                <span>Neutral</span>
+                <span>Very</span>
+            </div>
+
+            <label class="slider-prompt">Do you care for the fellow blockmates to be friendly?</label>
+            <input class="slider" type="range" id="slider-js" name="blockmate" min="-100" max="100" value="0">
+            <div class="slider-labels">
+                <span>Meh</span>
+                <span>Neutral</span>
+                <span>Very</span>
+            </div>
+
+
+            <label class="slider-prompt">Do you care for the noise level of fellow blockmates?</label>
+            <input class="slider" type="range" id="slider-js" name="noise" min="-100" max="100" value="0">
+            <div class="slider-labels">
+                <span>Meh</span>
+                <span>Neutral</span>
+                <span>Very</span>
+            </div>
+
+            <label class="slider-prompt"> How close do you wish to go to most of the classes?</label>
+            <input class="slider" type="range" id="slider-js" name="nearby" min="-100" max="100" value="0">
+            <div class="slider-labels">
+                <span>Meh</span>
+                <span>Neutral</span>
+                <span>Very</span>
+            </div>
+
+            <button id="form-button" class="form-button" type="button"  onclick="submitForm()">Submit</button>
+        </div>
     </form>
-
-    <div class="category">
-        <h2 class="category-text">Select a Category</h2>
-        <div class="category-selection">
-            <button class="category-btn" onclick="showRankings('Rooms')">Rooms</button>
-            <button class="category-btn" onclick="showRankings('Kitchen')">Kitchen</button>
-            <button class="category-btn" onclick="showRankings('Study Areas')">Study Areas</button>
-        </div>
-
-        <!-- Ranking Table Section -->
-        <div id="ranking-table">
-            <h2 id="category-title">Category Rankings</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Name</th>
-                        <th>Cleanliness</th>
-                        <th>Distance from Class</th>
-                        <th>Quietness</th>
-                    </tr>
-                </thead>
-                <tbody id="ranking-body">
-                    <!-- Rows will be dynamically added here based on category selection -->
-                </tbody>
-            </table>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>

@@ -15,7 +15,7 @@ This week we have updated our ER model to more accurately and consisely show the
 ![image](https://github.com/user-attachments/assets/6d8b9725-39d1-459c-bf07-3e38ff4d385b)
 <p align="center">figure 1: ER Model</p>
 
-## Week 5
+## Week 4
 
 We have:
 - created our CD along side images and logos for our frontend (All of this can be found under assignment_5) 
@@ -27,10 +27,28 @@ Because of github pages, the index file must always be in the root of the direct
 
 <br>
 
-![image](./assginment_5/homepage_screenshot.png)
+![image](./assignment_4/homepage_screenshot.png)
 <p align="center">figure 2: Homepage</p>
 
 for now the website looks like this but will be changed and improved on in future weeks by adding more features and interactions for the usrer. 
 
+## Week 5
 
-hello world, this was added by harishi
+This week, the frontend form was implemented. Before the user even sees the form, they have an introductory text. For now it is very bare bones but will be improved in the future. After that a form is presented. All the error handling is done on the front end. If none of the inputs were modified, the user will be notified. Otherwise the data is converted to a JSON with it being:  
+  
+<div style="text-align: center;">
+    <code>{ categorie: howImportantItIs }</code> 
+</div> 
+  
+and sent to the php server using AJAX.
+
+For now the server only responds with a success or failure and then notifies the user, but in the future the response will be the block that best suits the user and its attributes. 
+
+<div style="text-align: center;">
+    <video width="320" height="240" controls>
+    <source src="./assignment_5/demo-of-ajax.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+</div>
+
+<p align="center">figure 3: Homepage Demo Video</p>
