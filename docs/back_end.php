@@ -7,6 +7,17 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
 
+// Get the database connection details from environment variables
+$servername = getenv('DB_HOST');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASS');
+$dbname = getenv('DB_NAME');
+
+echo $servername . '\n';
+
+
+$conn = connectToDatabase($servername, $username, $password, $dbname);
+
 // Check if the request method is POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the input data from the POST body (assumes JSON format)
@@ -42,4 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'message' => 'Invalid request method. Only POST is allowed.'
     ]);
 }
-?>
+
+
+// creates a connection and returns the sql connection if the connection
+// is successful
+function connectToDatabase($servername, $username, $password, $dbname): mysqli {
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    return $conn;
+}
