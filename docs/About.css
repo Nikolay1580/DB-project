@@ -1,0 +1,77 @@
+#navbar {
+    background-color: #f5793b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+#navbar img {
+    height: 50px;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff6e1;
+    text-align: center;
+}
+
+h1 {
+    background: linear-gradient(to right, red, #f7bf01);
+    -webkit-background-clip: text; /* For Safari */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* For Safari */
+    color: transparent; /* Fallback for other browsers */
+    font-size: 2.5em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.founders {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    gap: 30px;
+}
+
+.founder {
+    text-align: center;
+}
+
+.founder img {
+    width: 150px; /* Adjust the size as needed */
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #f5793b;
+}
+
+.founder-name {
+    font-size: 1.2em;
+    color: #f5793b;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #f7bf01;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#social-media i {
+    margin: 0 10px;
+    color: white;
+}
