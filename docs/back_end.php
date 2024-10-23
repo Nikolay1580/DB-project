@@ -7,13 +7,19 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
 
-// Get the database connection details from environment variables
+// Load the .env file
+loadDotEnv(__DIR__ . '/.env');
+
+// Access the environment variables
 $servername = getenv('DB_HOST');
 $username = getenv('DB_USER');
 $password = getenv('DB_PASS');
 $dbname = getenv('DB_NAME');
 
-echo $servername . '\n';
+echo "DB_HOST: $servername\n";
+echo "DB_USER: $username\n";
+echo "DB_PASS: $password\n";
+echo "DB_NAME: $dbname\n";
 
 
 $conn = connectToDatabase($servername, $username, $password, $dbname);
@@ -54,9 +60,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 }
 
+/**
+ * @param string $path 
+ * this function checks the directory and loads all of the vars from .env
+ * and then places them in the global var $_ENV so that they can be later obtain
+ * using getenv()
+*/
+function loadDotEnv($path)
+{
+    if (!file_exists($path)) {
+        throw new Exception("The .env file does not exist at the path: " . $path);
+    }
 
-// creates a connection and returns the sql connection if the connection
-// is successful
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0 || empty(trim($line))) {
+            continue;
+        }
+
+        list($name, $value) = explode('=', $line, 2);
+        $name = trim($name);
+        $value = trim($value, ' "');
+        putenv("$name=$value");
+        $_ENV[$name] = $value;
+        $_SERVER[$name] = $value; 
+    }
+}
+
+/**
+ * Summary of connectToDatabase
+ * @param string $servername
+ * @param string $username
+ * @param string $password
+ * @param string $dbname
+ * @return mysqli
+ * 
+ * function creates a connection to the database if the connection is successful it
+ * will return the db otherwise it will throw an error using die
+ */
 function connectToDatabase($servername, $username, $password, $dbname): mysqli {
     $conn = new mysqli($servername, $username, $password, $dbname);
 
