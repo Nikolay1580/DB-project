@@ -52,3 +52,12 @@ For now the server only responds with a success or failure and then notifies the
 </div>
 
 <p align="center">figure 3: Homepage Demo Video</p>
+
+## Week 6
+
+updated the backend where now it creates a connection to the DB, queuries it for the college name and block letter that match
+with the same qualities that the user wants. if nothing is found then it will give a coresponding error message, but that will
+be delt with at the front end, as the js will check if json object is empty and tell the user that there is no room.
+
+for future we will have some algorithm that is more lenient because, realistically speaking it is not possible to find a block
+with `exactly` what you want. 
