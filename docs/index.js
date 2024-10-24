@@ -61,14 +61,21 @@ function submitForm() {
     // To show that the data corresponds to user input (for gradings)
     console.log(input_data);
 
-    /*
-     * connetcs to the server via http, send the json as a string
-     * the server than decodes it and for now just sends a success or fail JSON 
-     * object back. This is done asynchronously. Then the user get notified if the
-     * data was sent and recieved successfully. In the futture the server will
-     * send an HTML page back with the best block http://localhost:3000/docs/back_end.php
-     */
-    fetch('http://localhost:3000/docs/back_end.php', { // http://5.75.182.107/~tlachezarov/back_end.php
+    let return_data = getDataFromBackend();
+
+    console.log(return_data);
+
+}
+
+/**
+ * connetcs to the server via http, send the json as a string
+ * the server than decodes it and for now just sends a success or fail JSON 
+ * object back. This is done asynchronously. Then the user get notified if the
+ * data was sent and recieved successfully. In the futture the server will
+ * send an HTML page back with the best block http://localhost:3000/docs/back_end.php
+ */
+function getDataFromBackend() {
+    fetch('http://5.75.182.107/~tlachezarov/back_end.php', { // http://5.75.182.107/~tlachezarov/back_end.php
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -86,8 +93,8 @@ function submitForm() {
         })
         .then(data => {
             if (data.status === 'success') {
-                console.log(data);
                 window.alert("Submission successful!");
+                return data;
             } else {
                 window.alert("Submission failed: " + data.message);
             }
