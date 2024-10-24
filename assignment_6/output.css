@@ -1,0 +1,107 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff6e1; /* Same background color as other pages */
+    color: #333;
+}
+
+/* Navbar */
+#navbar {
+    background-color: #f5793b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+#navbar img {
+    height: 50px;
+}
+
+/* Table and Content Styling */
+#table-container {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 60vh;
+}
+
+/* Table Styling */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f5f5dc; /* Light background color for better readability */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f5793b;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: #f7bf01; /* Subtle hover effect */
+}
+
+td {
+    font-size: 1em;
+    color: #333;
+}
+
+/* No Room Found Message */
+.no-room {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+.no-room img {
+    width: 500px; 
+    height: auto; 
+    margin-bottom: 10px; 
+}
+
+.no-room p {
+    font-size: 1.5em; 
+    color: #f5793b; 
+    font-weight: bold; 
+    padding: 10px; 
+    border-radius: 8px; 
+}
+
+
+/* Footer */
+footer {
+    background-color: #f7bf01;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#social-media i {
+    margin: 0 10px;
+    color: white;
+}

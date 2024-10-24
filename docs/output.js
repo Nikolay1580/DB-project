@@ -1,9 +1,12 @@
-// This should work assuming getDataFromBackend stores or returns data correctly
-window.sharedData = {}; 
+
+window.onload = () => {
+    loadData();
+}
+
 
 function loadData() {
     // Check if the data exists in window.sharedData or local storage
-    const data = window.sharedData || JSON.parse(localStorage.getItem('result_data'));
+    const data = JSON.parse(localStorage.getItem('result_data'));
 
     if (data && data.college && data.block) {
         // Populate the table if valid data is present
@@ -12,23 +15,37 @@ function loadData() {
         // Show a message or image indicating no room was found
         displayNoRoomFound();
     }
+
+    console.log(data);
 }
 
 // This is the main funciton that should return the college and block
 function displayTable(data) {
     const tableContainer = document.getElementById('table-container');
-    tableContainer.innerHTML = `
+    // Initialize table structure
+    let tableHTML = `
         <table>
             <tr>
                 <th>College</th>
                 <th>Block Letter</th>
             </tr>
-            <tr>
-                <td>${data.college}</td>
-                <td>${data.block}</td>
-            </tr>
-        </table>
     `;
+
+    // Loop through the array of data and add rows for each entry
+    data.forEach(item => {
+        tableHTML += `
+            <tr>
+                <td>${item.college}</td>
+                <td>${item.block}</td>
+            </tr>
+        `;
+    });
+
+    // Close the table
+    tableHTML += `</table>`;
+
+    // Set the innerHTML of the table container to display the table
+    tableContainer.innerHTML = tableHTML;
 }
 
 // This helps the html file to display the correct meseage when there is no room
@@ -41,11 +58,3 @@ function displayNoRoomFound() {
         </div>
     `;
 }
-
-function saveToSharedData(data) {
-    window.sharedData = data; // window.sharedData
-    localStorage.setItem('result_data', JSON.stringify(data)); // local storage
-}
-
-// When the page loads, attempt to load data
-window.onload = loadData;

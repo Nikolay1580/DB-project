@@ -61,3 +61,12 @@ be delt with at the front end, as the js will check if json object is empty and 
 
 for future we will have some algorithm that is more lenient because, realistically speaking it is not possible to find a block
 with `exactly` what you want. 
+
+on the front-end we have made it that when the form is submitted and the sql data is sent back from the server, the 
+js will share the file to another file using `localStorage` and then redirecting to the output.html page. if the result is nothing an according message is given that the user just does not fit any room on campus, otherwise a table of the block and
+colleges that match the user's taste shows up. 
+
+Because of technical dificulties with apache and the mysql not giving us access to set it up, the DB is not working so we cant
+proceed as the js does not allow to proceed if invalid data is sent back. 
+
+PS. please use firefox for best user expirience!
