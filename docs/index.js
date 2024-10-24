@@ -102,5 +102,6 @@ function getDataFromBackend() {
         .catch(error => {
             console.error('Error:', error);
             window.alert("An error occurred while sending data to the server.");
+            return null;
         });
 }
