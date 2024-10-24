@@ -66,9 +66,9 @@ function submitForm() {
      * the server than decodes it and for now just sends a success or fail JSON 
      * object back. This is done asynchronously. Then the user get notified if the
      * data was sent and recieved successfully. In the futture the server will
-     * send an HTML page back with the best block
+     * send an HTML page back with the best block http://localhost:3000/docs/back_end.php
      */
-    fetch('http://5.75.182.107/~tlachezarov/back_end.php', {
+    fetch('http://localhost:3000/docs/back_end.php', { // http://5.75.182.107/~tlachezarov/back_end.php
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

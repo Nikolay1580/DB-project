@@ -14,6 +14,7 @@ $username = getenv('DB_USER');
 $password = getenv('DB_PASS');
 $dbname = getenv('DB_NAME');
 
+
 /**
  * listens and checks for a POST request,
  * then it checks that the data is not empty and send corresponding error messages
@@ -64,12 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode($potential_rooms);
 
     $conn->close();
-} else { // when the server is just "idle"
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Invalid request method.'
-    ]);
-    exit;
 }
 
 /**
