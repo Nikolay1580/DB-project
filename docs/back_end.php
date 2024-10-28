@@ -7,6 +7,13 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
 
+// Suppress warnings
+error_reporting(E_ERROR | E_PARSE);
+
+// Enable error logging to a file
+// ini_set('log_errors', 1);
+// ini_set('error_log', __DIR__ . '/error.log');
+
 // Load the .env file
 loadDotEnv(__DIR__ . '/.env');
 $servername = getenv('DB_HOST');
@@ -32,12 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $conn = connectToDatabase($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
+    try {
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            throw new Exception("Connection failed: " . $conn->connect_error);
+        }
+    } catch (Exception $e) {
         echo json_encode([
             'status' => 'error',
-            'message' => 'Failed to connect to the database.'
+            'message' => $e->getMessage()
         ]);
         exit;
     }
@@ -53,15 +63,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($conditions)) {
-        echo json_encode(array('error' => 'No categories provided'));
-        exit();
+        echo json_encode(['error' => 'No categories provided']);
+        $sql_string = "SELECT block_letter, college FROM BLOCKS WHERE " . implode(' AND ', $conditions);
     }
 
     $sql_string = "SELECT BLOCK.NAME FROM BLOCKS WHERE " . implode(' AND ', $conditions);;
 
     $potential_rooms = queryDatabase($conn, $sql_string, $types, $values);
 
-    echo json_encode($potential_rooms);
+    $fake_data =  [
+        ["college" => "Engineering", "block" => "c"],
+    ];
+
+    echo json_encode([
+        'status' => 'success',
+        'message' => 'Data fetched successfully',
+        'data' => $fake_data
+    ]);
 
     $conn->close();
 } else { // when the server is just "idle"

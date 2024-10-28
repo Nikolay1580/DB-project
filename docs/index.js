@@ -62,17 +62,11 @@ function submitForm() {
     console.log(input_data);
 
     let return_data = getDataFromBackend(input_data);
-
-    // used to share this data from the server to thew new page
-    localStorage.setItem('result_data', JSON.stringify(data));
     const data = [
         { college: 'College A', block: 'A' },
         { college: 'College B', block: 'B' },
         { college: 'College C', block: 'C' }
     ];
-
-    window.location.href = "./output.html";
-
 }
 
 /**
@@ -89,7 +83,7 @@ function getDataFromBackend(input_data) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(input_data)
+        body: JSON.stringify(input_data),
     })
         .then(response => {
             // Check if the response is JSON
@@ -103,14 +97,16 @@ function getDataFromBackend(input_data) {
         .then(data => {
             if (data.status === 'success') {
                 window.alert("Submission successful!");
-                return data;
+                // used to share this data from the server to thew new page
+                localStorage.setItem('result_data', JSON.stringify(data));
+                window.location.href = "./output.html";
+
             } else {
                 window.alert("Submission failed: " + data.message);
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            window.alert("An error occurred while sending data to the server.");
-            return null;
+            window.alert("An error occurred while sending data to the server");
         });
 }
