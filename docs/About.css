@@ -27,14 +27,26 @@ body {
 
 h1 {
     background: linear-gradient(to right, red, #f7bf01);
-    -webkit-background-clip: text; /* For Safari */
-    background-clip: text; /* Standard property */
-    -webkit-text-fill-color: transparent; /* For Safari */
-    color: transparent; /* Fallback for other browsers */
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    color: transparent; 
     font-size: 2.5em;
     margin-top: 20px;
     text-align: center;
 }
+
+.gradient-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right, red, #f7bf01); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    margin: 30px 0;
+}
+
 
 .founders {
     display: flex;
@@ -49,16 +61,72 @@ h1 {
 }
 
 .founder img {
-    width: 150px; /* Adjust the size as needed */
-    height: 150px;
+    width: 300px; 
+    height: 300px;
     border-radius: 50%;
     border: 3px solid #f5793b;
 }
 
 .founder-name {
-    font-size: 1.2em;
+    font-size: 1.7em;
     color: #f5793b;
     margin-top: 10px;
+}
+
+
+.customer-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #fff6e1; 
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5dc;
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+.customer-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.review-text {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.review-text p {
+    margin: 5px 0;
+}
+
+.review-text p:nth-child(2) {
+    font-style: italic;
+    color: #777;
+}
+
+.review.flip {
+    flex-direction: row-reverse;
+}
+
+.review.flip img {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.customer-reviews {
+    margin-bottom: 60px;
 }
 
 footer {
