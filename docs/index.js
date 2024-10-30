@@ -61,7 +61,7 @@ function submitForm() {
     // To show that the data corresponds to user input (for gradings)
     console.log(input_data);
 
-    let return_data = getDataFromBackend(input_data);
+    getDataFromBackend(input_data);
     const data = [
         { college: 'College A', block: 'A' },
         { college: 'College B', block: 'B' },
@@ -77,36 +77,32 @@ function submitForm() {
  * data was sent and recieved successfully. In the futture the server will
  * send an HTML page back with the best block http://localhost:3000/docs/back_end.php
  */
-function getDataFromBackend(input_data) {
-    fetch('http://localhost:3000/docs/back_end.php', { // http://5.75.182.107/~tlachezarov/back_end.php
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input_data),
-    })
-        .then(response => {
-            // Check if the response is JSON
-            const contentType = response.headers.get('content-type');
-            if (contentType && contentType.includes('application/json')) {
-                return response.json();
-            } else {
-                throw new Error('Response was not JSON');
-            }
-        })
-        .then(data => {
+async function getDataFromBackend(input_data) {
+    try {
+        const response = await fetch('http://localhost:3000/docs/back_end.php/api/data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(input_data),
+        });
+
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+            const data = await response.json();
             if (data.status === 'success') {
-                window.alert("Submission successful!");
-                // used to share this data from the server to thew new page
+                window.alert("Submission successful: " + data.message);
+
                 localStorage.setItem('result_data', JSON.stringify(data));
                 window.location.href = "./output.html";
-
             } else {
                 window.alert("Submission failed: " + data.message);
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            window.alert("An error occurred while sending data to the server");
-        });
+        } else {
+            throw new Error('Response was not JSON');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        window.alert("An error occurred while sending data to the server");
+    }
 }
