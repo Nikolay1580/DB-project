@@ -79,7 +79,7 @@ function submitForm() {
  */
 async function getDataFromBackend(input_data) {
     try {
-        const response = await fetch('http://localhost:3000/docs/back_end.php/api/data', {
+        const response = await fetch('http://localhost:3000/docs/back_end.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ async function getDataFromBackend(input_data) {
                 window.alert("Submission successful: " + data.message);
 
                 localStorage.setItem('result_data', JSON.stringify(data));
-                window.location.href = "./output.html";
+                window.location.href = "./docs/output.html";
             } else {
                 window.alert("Submission failed: " + data.message);
             }
