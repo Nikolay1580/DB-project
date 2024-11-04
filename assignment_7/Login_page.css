@@ -1,0 +1,92 @@
+/* General Page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff6e1;
+    text-align: center;
+}
+
+/* Navbar */
+#navbar {
+    background-color: #f5793b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+#navbar img {
+    height: 50px;
+
+}
+
+/* Login Form */
+.login-container {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #666;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f7bf01;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #f5a623;
+}
+
+/* Footer */
+footer {
+    background-color: #f7bf01;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#social-media i {
+    margin: 0 10px;
+    color: white;
+}
