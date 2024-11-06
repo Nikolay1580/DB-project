@@ -15,6 +15,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 // ini_set('error_log', __DIR__ . '/error.log');
 
 require __DIR__ . '/gspot_lib.php';
+require __DIR__ . '/error_log.php';
 
 // Load the .env file
 loadDotEnv(__DIR__ . '/.env');
@@ -44,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
+            logError("connection failted");
             throw new Exception("Connection failed: " . $conn->connect_error);
         }
     } catch (Exception $e) {

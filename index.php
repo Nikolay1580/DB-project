@@ -1,6 +1,6 @@
 <?php
 include './docs/access_log.php';
-include "./docs/error_log.php";
+// include "./docs/error_log.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
