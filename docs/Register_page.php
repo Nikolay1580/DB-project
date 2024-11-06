@@ -1,11 +1,15 @@
+<?php
+include './access_log.php';
+// include "./docs/error_log.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - FindYourGspot</title>
-    <link rel="stylesheet" href="Login_page.css">
-    <script src="Login_page.js" defer></script>
+    <title>Register - FindYourGspot</title>
+    <link rel="stylesheet" href="Register_page.css">
+    <script src="Register_page.js" defer></script>
 </head>
 <body>
 
@@ -25,18 +29,17 @@
         </div>
     </div>
 
-    <!-- Login Form Section -->
-    <div class="login-container">
-        <h2>Login</h2>
-        <!-- Add ID "loginForm" for JavaScript to target -->
-        <form id="loginForm" action="/login" method="POST">
+    <!-- Registration Form Section -->
+    <div class="register-container">
+        <h2>Register</h2>
+        <form id="registerForm">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" required maxlength="25">
-            
+            <input type="text" id="username" name="username" required>
+
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required maxlength="25">
-            
-            <button type="submit">Log In</button>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Register</button>
         </form>
     </div>
 
