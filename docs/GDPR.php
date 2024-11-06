@@ -20,18 +20,18 @@ include './access_log.php';
     <!-- Navbar -->
     <div id="navbar">
         <div class="logo">
-            <a href="../../index.html">
+            <a href="../../index.php">
                 <img src="./content/symbol-transp.png"
                 alt="FindYourGspot Logo"
                 class="logo-img">
             </a>
         </div>
         <div>
-            <a href="../../index.html">Home</a>
-            <a href="About.html">About</a>
-            <a href="GDPR.html">GDPR</a>
-            <a href="Login_page.html">Log In</a>
-            <a href="Register_page.html">Register</a>
+            <a href="../../index.php">Home</a>
+            <a href="About.php">About</a>
+            <a href="GDPR.php">GDPR</a>
+            <a href="Login_page.php">Log In</a>
+            <a href="Register_page.php">Register</a>
         </div>
     </div>
 

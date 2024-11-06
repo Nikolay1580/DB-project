@@ -34,11 +34,11 @@ include './docs/access_log.php';
             </a>
         </div>
         <div>
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="./docs/About.php">About</a>
-            <a href="./docs/GDPR.html">GDPR</a>
-            <a href="./docs/Login_page.html">Log In</a>
-            <a href="./docs/Register_page.html">Register</a>
+            <a href="./docs/GDPR.php">GDPR</a>
+            <a href="./docs/Login_page.php">Log In</a>
+            <a href="./docs/Register_page.php">Register</a>
         </div>
     </div>
 
