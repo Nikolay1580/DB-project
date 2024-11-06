@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             throw new Exception("Connection failed: " . $conn->connect_error);
         }
     } catch (Exception $e) {
+        logError($e->getMessage());
         echo json_encode([
             'status' => 'error',
             'message' => $e->getMessage()
@@ -85,6 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $conn->close();
 } else { // when the server is just "idle"
+    logError("Invalid request method in back_end.php");
     echo json_encode([
         'status' => 'error',
         'message' => 'Invalid request method.'
