@@ -4,6 +4,7 @@ include './access_log.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +12,24 @@ include './access_log.php';
     <title>FindYourGspot</title>
     <!-- Font Awesome for Social Media Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script src="index.js"></script> 
+    <script src="index.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="GDPR.css">
 </head>
+
 <body>
 
     <!-- Navbar -->
     <div id="navbar">
         <div class="logo">
-            <a href="../../index.php">
+            <a href="../index.php">
                 <img src="./content/symbol-transp.png"
-                alt="FindYourGspot Logo"
-                class="logo-img">
+                    alt="FindYourGspot Logo"
+                    class="logo-img">
             </a>
         </div>
         <div>
-            <a href="../../index.php">Home</a>
+            <a href="../index.php">Home</a>
             <a href="About.php">About</a>
             <a href="GDPR.php">GDPR</a>
             <a href="Login_page.php">Log In</a>
@@ -44,11 +46,11 @@ include './access_log.php';
             does not contain contents which is illegal wrt. German jurisdiction. However, as we have no in-
             fluence on such contents, this may change without our notice. Therefore we deny any responsib-
             ility for the websites referenced through our external links from here.
-            No information conflicting with GDPR is stored in the server. We are not using cookies to track 
+            No information conflicting with GDPR is stored in the server. We are not using cookies to track
         </p>
 
     </div>
-    
+
     <footer>
         <div>&copy; 2024 FindYourGspot</div>
         <div id="social-media">
@@ -58,4 +60,5 @@ include './access_log.php';
         </div>
     </footer>
 </body>
+
 </html>

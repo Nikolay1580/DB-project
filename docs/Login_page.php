@@ -4,6 +4,7 @@ include './access_log.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,18 @@ include './access_log.php';
     <link rel="stylesheet" href="Login_page.css">
     <script src="Login_page.js" defer></script>
 </head>
+
 <body>
 
     <!-- Navbar (same as other pages) -->
     <div id="navbar">
         <div class="logo">
-            <a href="../../index.php">
+            <a href="../index.php">
                 <img src="./content/symbol-transp.png" alt="FindYourGspot Logo" class="logo-img">
             </a>
         </div>
         <div>
-            <a href="../../index.php">Home</a>
+            <a href="../index.php">Home</a>
             <a href="about.php">About</a>
             <a href="GDPR.php">GDPR</a>
             <a href="Login_page.php">Log In</a>
@@ -36,10 +38,10 @@ include './access_log.php';
         <form id="loginForm" action="/login" method="POST">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required maxlength="25">
-            
+
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required maxlength="25">
-            
+
             <button type="submit">Log In</button>
         </form>
     </div>
@@ -54,4 +56,5 @@ include './access_log.php';
         </div>
     </footer>
 </body>
+
 </html>

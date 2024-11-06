@@ -4,6 +4,7 @@ include './access_log.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,18 @@ include './access_log.php';
     <link rel="stylesheet" href="Register_page.css">
     <script src="Register_page.js" defer></script>
 </head>
+
 <body>
 
     <!-- Navbar (same as other pages) -->
     <div id="navbar">
         <div class="logo">
-            <a href="../../index.php">
+            <a href="../index.php">
                 <img src="./content/symbol-transp.png" alt="FindYourGspot Logo" class="logo-img">
             </a>
         </div>
         <div>
-            <a href="../../index.php">Home</a>
+            <a href="../index.php">Home</a>
             <a href="about.php">About</a>
             <a href="GDPR.php">GDPR</a>
             <a href="Login_page.php">Log In</a>
@@ -53,4 +55,5 @@ include './access_log.php';
         </div>
     </footer>
 </body>
+
 </html>
