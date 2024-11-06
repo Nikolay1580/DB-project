@@ -1,6 +1,8 @@
 <?php
 
+require __DIR__ . '/gspot_lib.php';
 $errorLogFile = '/home/tlachezarov/var/log/apache2/error_log.csv';
+
 
 /**
  * opens the error file
@@ -11,7 +13,8 @@ function logError($errorMessage)
     global $errorLogFile;
 
     $timestamp = date('Y-m-d H:i:s');
-    $errorLogEntry = [$timestamp, $errorMessage];
+    $userIP = getUserIP();
+    $errorLogEntry = [$timestamp, $userIP, $errorMessage];
 
     // Write to the error log file
     $errorHandle = fopen($errorLogFile, 'a');
