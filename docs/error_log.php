@@ -3,6 +3,8 @@
 require __DIR__ . '/gspot_lib.php';
 $errorLogFile = '/home/tlachezarov/var/log/apache2/error_log.csv';
 
+umask(0002);
+
 set_error_handler(function ($errno, $errstr, $errfile, $errline) {
     $errorMessage = "Error [$errno]: $errstr in $errfile on line $errline";
     logError($errorMessage);

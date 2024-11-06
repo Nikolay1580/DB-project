@@ -3,10 +3,12 @@
 require __DIR__ . '/gspot_lib.php';
 $accessLogFile = '/home/tlachezarov/var/log/apache2/access.log';
 
+umask(0002);
+
 // Capture request data
 $userIP = getUserIP();
 $pageURL = $_SERVER['REQUEST_URI'];
-$timestamp = date('Y-m-d H:i:s');
+$timestamp = date('Y-d-m H:i:s');
 $userAgent = $_SERVER['HTTP_USER_AGENT'];
 
 // Create a CSV line for the access log
