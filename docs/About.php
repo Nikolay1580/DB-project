@@ -1,5 +1,10 @@
+<?php
+include './docs/access_log.php';
+// include "./docs/error_log.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +12,7 @@
     <link rel="stylesheet" href="About.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -33,11 +39,11 @@
             <p class="founder-name">Mateo Pico</p>
         </div>
         <div class="founder">
-            <img src="content/Nik.jpeg" alt="Nik Tsonev"> 
+            <img src="content/Nik.jpeg" alt="Nik Tsonev">
             <p class="founder-name">Nik Tsonev</p>
         </div>
         <div class="founder">
-            <img src="content/Harishi.jpg" alt="Harishi Velevan"> 
+            <img src="content/Harishi.jpg" alt="Harishi Velevan">
             <p class="founder-name">Harishi Velevan</p>
         </div>
     </div>
@@ -79,4 +85,5 @@
     </footer>
 
 </body>
+
 </html>

@@ -27,7 +27,7 @@ include './docs/access_log.php';
     <!-- Navbar -->
     <div id="navbar">
         <div class="logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="./docs/content/symbol-transp.png"
                     alt="FindYourGspot Logo"
                     class="logo-img">
@@ -35,7 +35,7 @@ include './docs/access_log.php';
         </div>
         <div>
             <a href="index.html">Home</a>
-            <a href="./docs/About.html">About</a>
+            <a href="./docs/About.php">About</a>
             <a href="./docs/GDPR.html">GDPR</a>
             <a href="./docs/Login_page.html">Log In</a>
             <a href="./docs/Register_page.html">Register</a>
