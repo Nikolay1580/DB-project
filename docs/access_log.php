@@ -7,7 +7,7 @@ umask(0002);
 
 // Capture request data
 $userIP = getUserIP();
-$pageURL = $_SERVER['REQUEST_URI'];
+$pageURL = $_SERVER['SCRIPT_NAME'];
 $timestamp = date('Y-d-m H:i:s');
 $userAgent = $_SERVER['HTTP_USER_AGENT'];
 
