@@ -1,7 +1,6 @@
 <?php
 
 require __DIR__ . '/gspot_lib.php';
-$errorLogFile = '/home/tlachezarov/var/log/apache2/error_log.csv';
 
 umask(0002);
 

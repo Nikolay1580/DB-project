@@ -86,17 +86,19 @@ function getUserIP()
 function logError($errorMessage)
 {
     global $errorLogFile;
+    $errorLogFile = '/home/tlachezarov/var/log/apache2/error.log';
 
     $timestamp = date('Y-m-d H:i:s');
     $userIP = getUserIP();
     $errorLogEntry = [$timestamp, $userIP, $errorMessage];
 
     // Write to the error log file
-    $errorHandle = fopen($errorLogFile, 'a');
+    $errorHandle = @fopen($errorLogFile, 'a');  // Suppress warnings here to avoid recursion
     if ($errorHandle !== false) {
         fputcsv($errorHandle, $errorLogEntry);
         fclose($errorHandle);
     } else {
+        // Use PHP's built-in error_log() without triggering the custom handler
         error_log("Unable to write to error log file: $errorLogFile");
     }
 }
