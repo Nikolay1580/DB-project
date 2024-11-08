@@ -1,6 +1,5 @@
 <?php
 include './access_log.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
