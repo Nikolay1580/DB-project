@@ -1,4 +1,4 @@
-document.getElementById("loginForm").addEventListener("submit", async function(event) {
+document.getElementById("registerForm").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const username = document.getElementById("username").value;
@@ -10,28 +10,28 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         return;
     }
 
-    // Create a JSON object for login data
-    const loginData = {
-        type: "login",
+    // Create a JSON object for registration data
+    const registerData = {
+        type: "register",
         username: username,
         password: password
     };
 
     try {
-        const response = await fetch("http://localhost:3000/docs/auth.php", {
+        const response = await fetch("http://5.75.182.107/~tlachezarov/docs/server/auth.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(loginData),
+            body: JSON.stringify(registerData),
         });
         const result = await response.json();
-        
+
         if (result.status === "success") {
-            window.alert("Login Successful");
+            window.alert("Register Successful");
         } else {
             window.alert("Login Failled");
         }
     } catch (error) {
         console.error("Error:", error);
-        alert("An error occurred while processing your login request.");
+        alert("An error occurred while processing your registration request.");
     }
 });

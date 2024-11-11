@@ -79,7 +79,7 @@ function submitForm() {
  */
 async function getDataFromBackend(input_data) {
     try {
-        const response = await fetch('http://5.75.182.107/~tlachezarov/docs/back_end.php', {
+        const response = await fetch('http://5.75.182.107/~tlachezarov/docs/server/back_end.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

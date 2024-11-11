@@ -12,8 +12,8 @@ include './docs/access_log.php';
     <title>FindYourGspot</title>
     <!-- Font Awesome for Social Media Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script src="./docs/index.js"></script>
-    <link rel="stylesheet" href="./docs/style.css">
+    <script src="./docs/client/index.js"></script>
+    <link rel="stylesheet" href="./docs/client/style.css">
     <style>
         #input-form {
             display: none;
@@ -34,10 +34,10 @@ include './docs/access_log.php';
         </div>
         <div>
             <a href="index.php">Home</a>
-            <a href="./docs/About.php">About</a>
-            <a href="./docs/GDPR.php">GDPR</a>
-            <a href="./docs/Login_page.php">Log In</a>
-            <a href="./docs/Register_page.php">Register</a>
+            <a href="./docs/client/About.php">About</a>
+            <a href="./docs/client/GDPR.php">GDPR</a>
+            <a href="./docs/client/Login_page.php">Log In</a>
+            <a href="./docs/client/Register_page.php">Register</a>
         </div>
     </div>
 

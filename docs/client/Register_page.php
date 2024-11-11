@@ -7,9 +7,9 @@ include './access_log.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - FindYourGspot</title>
-    <link rel="stylesheet" href="Login_page.css">
-    <script src="Login_page.js" defer></script>
+    <title>Register - FindYourGspot</title>
+    <link rel="stylesheet" href="Register_page.css">
+    <script src="Register_page.js" defer></script>
 </head>
 
 <body>
@@ -17,12 +17,12 @@ include './access_log.php';
     <!-- Navbar (same as other pages) -->
     <div id="navbar">
         <div class="logo">
-            <a href="../index.php">
-                <img src="./content/symbol-transp.png" alt="FindYourGspot Logo" class="logo-img">
+            <a href="../../index.php">
+                <img src="../content/symbol-transp.png" alt="FindYourGspot Logo" class="logo-img">
             </a>
         </div>
         <div>
-            <a href="../index.php">Home</a>
+            <a href="../../index.php">Home</a>
             <a href="about.php">About</a>
             <a href="GDPR.php">GDPR</a>
             <a href="Login_page.php">Log In</a>
@@ -30,18 +30,17 @@ include './access_log.php';
         </div>
     </div>
 
-    <!-- Login Form Section -->
-    <div class="login-container">
-        <h2>Login</h2>
-        <!-- Add ID "loginForm" for JavaScript to target -->
-        <form id="loginForm" action="/login" method="POST">
+    <!-- Registration Form Section -->
+    <div class="register-container">
+        <h2>Register</h2>
+        <form id="registerForm">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" required maxlength="25">
+            <input type="text" id="username" name="username" required>
 
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required maxlength="25">
+            <input type="password" id="password" name="password" required>
 
-            <button type="submit">Log In</button>
+            <button type="submit">Register</button>
         </form>
     </div>
 
