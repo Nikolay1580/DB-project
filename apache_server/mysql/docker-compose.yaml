@@ -1,0 +1,24 @@
+services:
+  mysql_db:
+    container_name: mysql_db
+    image: mysql
+    restart: unless-stopped
+    volumes:
+      - ./.data/db:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d:z
+    environment:
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      # MYSQL_DATABASE: ${MYSQL_DATABASE}
+      # MYSQL_USER: ${MYSQL_USER}
+      # MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      mysql_db:
+        ipv4_address: 172.18.0.10
+
+networks:
+  mysql_db:
+    driver: bridge
+    ipam:
+        config:
+        - subnet: 172.18.0.0/24
