@@ -69,4 +69,4 @@ colleges that match the user's taste shows up.
 Because of technical dificulties with apache and the mysql not giving us access to set it up, the DB is not working so we cant
 proceed as the js does not allow to proceed if invalid data is sent back. 
 
-PS. please use firefox for best user expirience!
+PS. please use firefox for best user experience!
