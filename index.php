@@ -72,24 +72,25 @@ include './docs/access_log.php';
         <input type="text" id="search" placeholder="What College were you in">
 
         <script>
-       $(document).ready(() => {
-            $("#search").on("input", () => {
-                const searchTerm = $(this).val();
-                if (searchTerm.length > 0) {
-                    $.ajax({
-                        url: 'http://5.75.182.107/~tlachezarov/docs/server/auto_complete.php',
-                        type: 'GET',
-                        data: { term: searchTerm },
-                        success: (data) => {
-                            const suggestions = data.split(", ");
-                            $("#search").autocomplete({
-                                source: suggestions
-                            });
-                        }
-                    });
-                }
-            });
+       $(document).ready(function() {
+        $("#search").on("input", function() {  
+            const searchTerm = $(this).val(); 
+            
+            if (searchTerm.length > 0) {
+                $.ajax({
+                    url: 'http://5.75.182.107/~tlachezarov/docs/server/auto_complete.php',
+                    type: 'GET',
+                    data: { term: searchTerm },
+                    success: function(data) {
+                        const suggestions = data.split(", ");
+                        $("#search").autocomplete({
+                            source: suggestions
+                        });
+                    }
+                });
+            }
         });
+    });
     </script>
 
         <div class="slider-test">
