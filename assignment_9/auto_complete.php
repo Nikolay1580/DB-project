@@ -10,15 +10,13 @@ header('Content-Type: text/plain');
 if (isset($_GET['term'])) {
     $term = $_GET['term'];
 
-    $data = ["data", "TO", "BE", "DISCLOSED"];
+    $data = ["nord", "nordmetall", "merc", "mercator", "krupp a-d", "krupp e/f", "c3", "C3"];
 
     $results = array_filter($data, function($item) use ($term) {
         return stripos($item, $term) !== false;
     });
 
-    $resultString = implode(", ", $results);
-
-    echo $resultString;
+    echo implode(", ", $results);
 } else {
     echo "No term parameter provided";
 }
