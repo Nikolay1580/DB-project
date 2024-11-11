@@ -1,0 +1,33 @@
+services:
+  php:
+    image: php:apache
+    container_name: find_gspot
+    pull_policy: missing
+    restart: unless-stopped # always
+    ports:
+      - 8080:80
+    volumes:
+      - ${APP_PATH}:/var/www/html/
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME}
+  # find_gspot:
+  #   image: httpd:latest
+  #   container_name: find_gspot
+  #   ports:
+  #     - 8080:80
+  #   pull_policy: missing
+  #   restart: unless-stopped # always
+  #   volumes:
+  #     - ${APP_PATH}:/usr/local/apache2/htdocs
+  #   environment:
+  #     DB_HOST: ${DB_HOST}
+  #     DB_USER: ${DB_USER}
+  #     DB_PASS: ${DB_PASS}
+  #     DB_NAME: ${DB_NAME}
+
+networks:
+  mysql_db:
+    external: true
