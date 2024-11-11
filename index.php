@@ -67,6 +67,30 @@ include './docs/access_log.php';
         to not waste bandwith sending incorrect data
     -->
     <form id="input-form" class="input-form">
+
+        <input type="text" id="search" placeholder="What College were you in">
+
+        <script>
+       $(document).ready(() => {
+            $("#search").on("input", () => {
+                const searchTerm = $(this).val();
+                if (searchTerm.length > 0) {
+                    $.ajax({
+                        url: 'http://5.75.182.107/~tlachezarov/docs/server/auto_complete.php',
+                        type: 'GET',
+                        data: { term: searchTerm },
+                        success: (data) => {
+                            const suggestions = data.split(", ");
+                            $("#search").autocomplete({
+                                source: suggestions
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
         <div class="slider-test">
             <label class="slider-prompt">How much do you care about food quality at the servery?</label>
 
@@ -131,6 +155,8 @@ include './docs/access_log.php';
             <button id="form-button" class="form-button" type="button" onclick="submitForm()">Submit</button>
         </div>
     </form>
+
+
 
     <!-- Footer -->
     <footer>

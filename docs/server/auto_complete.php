@@ -10,7 +10,12 @@ header('Content-Type: text/plain');
 if (isset($_GET['term'])) {
     $term = $_GET['term'];
 
-    $data = ["data", "TO", "BE", "DISCLOSED"];
+    $data = [
+        "College 3", "C3", "c3",
+        "Nord Metall", "nord Metal", "Nord", "nord", "nord metal",
+        "Alfred Krupp", "alfred Krupp", "alfred krupp", "Krupp", "krupp",
+        "Mercator", "mercator", "Merc", "merc"
+    ];
 
     $results = array_filter($data, function($item) use ($term) {
         return stripos($item, $term) !== false;
