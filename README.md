@@ -70,3 +70,37 @@ Because of technical dificulties with apache and the mysql not giving us access 
 proceed as the js does not allow to proceed if invalid data is sent back. 
 
 PS. please use firefox for best user experience!
+
+## Week 7
+
+This week, we focused on strengthening our web service security and implemented essential user authentication features.
+
+1. **Email Security**: We set up encrypted email communication using a plugin (e.g., Enigmail) to ensure secure interaction with the TAs. We generated a key pair and digital signature, sending the public key to the TA, followed by an encrypted, signed email to verify secure message delivery.
+
+2. **Access Control for Maintenance Pages**: To protect our service against unauthorized access, we implemented a basic user management system:
+   - Created an `auth.php` file for backend authentication processes, ensuring restricted access to maintenance functionalities.
+   - Configured a user table to store admin credentials for secure access.
+   - Developed user authentication interfaces and logic to validate login details on the server, blocking unauthorized access with an appropriate error message.
+
+3. **User Login and Registration**: We expanded the security framework by implementing user login and registration pages:
+   - **Login and Registration Pages**: Files such as `Login_page.html`, `Login_page.css`, `Login_page.js`, `Register_page.html`, `Register_page.css`, and `Register_page.js` were added to support user authentication.
+   - **Backend Authentication**: The `auth.php` file interacts with `gspot_lib.php` to verify user credentials securely.
+   - **Session Management**: The login and registration components are set up to support session management, further securing user interactions.
+
+With these additions, we laid a solid foundation for user authentication and enhanced security across the service. The code and configuration files for these updates are available in the repository for review and testing.
+
+
+
+Here's an updated summary for Week 8 that fits the tone and detail level of your README:
+
+
+## Week 8
+
+This week, we set up a new `apache_server` directory to house our database server, which is currently operational on our local system. We encountered some connectivity challenges with the university's server, which we are actively addressing to enable broader access.
+
+Additionally, we created an `analysis.pdf` file that documents the IP addresses of all PHP files within our project. This file includes detailed access statistics, such as each page’s access frequency, originating IP addresses, and browser information. We have also added two logging scripts, `access_log.php` and `error_log.php`, to track and log requests and errors. These logs allow us to generate insightful usage timelines and error diagnostics, facilitating continuous improvement and debugging of the service.
+
+
+
+
+
