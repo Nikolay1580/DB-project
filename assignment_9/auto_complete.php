@@ -11,7 +11,7 @@ if (isset($_GET['term'])) {
     $term = $_GET['term'];
 
     // Array of college names
-    $data = ["Nord", "nordmetall", "merc", "mercator", "krupp a-d", "krupp e/f", "c3", "C3"];
+    $data = ["nord", "nordmetall", "merc", "mercator", "krupp a-d", "krupp e-f", "c3", "C3"];
 
     // Filter the array to include only items that contain the term (case-insensitive)
     $results = array_filter($data, function($item) use ($term) {
