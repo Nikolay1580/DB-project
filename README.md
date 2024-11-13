@@ -91,7 +91,7 @@ With these additions, we laid a solid foundation for user authentication and enh
 
 
 
-Here's an updated summary for Week 8 that fits the tone and detail level of your README:
+
 
 
 ## Week 8
