@@ -71,30 +71,34 @@ include './docs/access_log.php';
         to not waste bandwith sending incorrect data
     -->
     <form id="input-form" class="input-form">
-
-        <input type="text" id="search" placeholder="What College were you in">
+        <div class="college-question-container">
+            <label for="search" class="college-question-label">What college were you in?</label>
+            <input type="text" id="search" placeholder="Type your college name">
+        </div>
 
         <script>
-       $(document).ready(function() {
-        $("#search").on("input", function() {  
-            const searchTerm = $(this).val(); 
-            
-            if (searchTerm.length > 0) {
-                $.ajax({
-                    url: 'http://5.75.182.107/~tlachezarov/docs/server/auto_complete.php',
-                    type: 'GET',
-                    data: { term: searchTerm },
-                    success: function(data) {
-                        const suggestions = data.split(", ");
-                        $("#search").autocomplete({
-                            source: suggestions
+            $(document).ready(function() {
+                $("#search").on("input", function() {  
+                    const searchTerm = $(this).val(); 
+                
+                    if (searchTerm.length > 0) {
+                        $.ajax({
+                            url: 'http://5.75.182.107/~tlachezarov/docs/server/auto_complete.php',
+                            type: 'GET',
+                            data: { term: searchTerm },
+                            success: function(data) {
+                                const suggestions = data.split(", ");
+                                $("#search").autocomplete({
+                                    source: suggestions
+                                });
+                            }
                         });
                     }
                 });
-            }
-        });
-    });
-    </script>
+            });
+        </script>
+    </form>
+
 
         <div class="slider-test">
             <label class="slider-prompt">How much do you care about food quality at the servery?</label>
