@@ -6,15 +6,15 @@ require __DIR__ . "/gspot_lib.php";
 loadDotEnv(__DIR__ . "/.env");
 $apiKey = getenv("API_Key");
 
-if ($Server[""])
-    $clientIp = getUserIP();
 
-    $geoUrl = "https://ipinfo.io/{$clientIp}/json?token={$ipinfoToken}";
-    $geoData = json_decode(file_get_contents($geoUrl), true);
+$clientIp = getUserIP();
 
-    $response = [
-        'ip' => $geoData['ip'] ?? 'Unknown',
-        'loc' => $geoData['loc'] ?? 'Unknown'
-    ];
+$geoUrl = "https://ipinfo.io/{$clientIp}/json?token={$apiKey}";
 
-    echo json_encode($response);
+// Fetch geolocation data
+$response = @file_get_contents($geoUrl);
+$geoData = $response ? json_decode($response, true) : ['loc' => '0,0', 'ip' => $clientIp];
+
+$location = $geoData['loc'];
+$latitude = explode(',', $location)[0];
+$longitude = explode(',', $location)[1];
