@@ -4,6 +4,7 @@ require __DIR__ . "../server/gspot_lib.php";
 loadDotEnv(__DIR__ . "../server/.env");
 $apiKey = getenv("API_Key");
 
+echo realpath(__DIR__ . "../server/gspot_lib.php");
 
 $clientIp = getUserIP();
 
