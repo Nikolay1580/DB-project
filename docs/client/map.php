@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "../server/get_location.php";
+require __DIR . "/../server/get_location.php";
 ?>
 
 <!DOCTYPE html>
