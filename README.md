@@ -101,6 +101,30 @@ This week, we set up a new `apache_server` directory to house our database serve
 Additionally, we created an `analysis.pdf` file that documents the IP addresses of all PHP files within our project. This file includes detailed access statistics, such as each page’s access frequency, originating IP addresses, and browser information. We have also added two logging scripts, `access_log.php` and `error_log.php`, to track and log requests and errors. These logs allow us to generate insightful usage timelines and error diagnostics, facilitating continuous improvement and debugging of the service.
 
 
+## Week 9
+
+![alt text](<Screenshot from 2024-11-18 16-50-34-1.png>)
+
+This week, we enhanced the search functionality of our service by integrating autocomplete capabilities using the jQuery framework. Below are the key steps and developments we implemented:
+
+1. **Autocomplete Setup**:
+   - Incorporated the `jquery-3.6.0.js` library from GitHub into our project to enable the use of advanced JavaScript features and the autocomplete widget.
+   - Built a new `auto_complete.php` server-side script to dynamically provide autocomplete suggestions. This script:
+     - Accepts a `term` query parameter from the client.
+     - Filters a predefined list of college names, returning suggestions that match the user's input in a case-insensitive manner.
+
+2. **Enhanced Search Fields**:
+   - Updated the `index.php` file with a search input field linked to the autocomplete feature.
+   - Added jQuery functionality to send asynchronous requests to `auto_complete.php` after each keystroke, fetching and displaying matching suggestions.
+
+3. **Dynamic Interactions**:
+   - The search field now provides real-time feedback, significantly improving user experience by allowing users to see suggestions as they type.
+
+4. **Documentation**:
+   - Complied with the course’s assignment requirements for implementing the autocomplete functionality as outlined in Assignment 9, documented in the `analysis.pdf` file, which includes an overview of all additions.
+
+This week's work positions our service as more interactive and user-friendly, aligning with modern web application standards.
+
 
 
 
