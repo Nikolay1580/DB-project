@@ -3,7 +3,7 @@ require __DIR__ . "/gspot_lib.php";
 
 function get_location_data() {
     loadDotEnv(__DIR__ . "/.env");
-    $apiKey = getenv("API_Key");
+    $apiKey = getenv("API_KEY");
 
     $clientIp = getUserIP();
 

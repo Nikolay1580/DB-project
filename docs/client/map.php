@@ -1,5 +1,16 @@
 <?php
-require __DIR . "/../server/get_location.php";
+require_once __DIR__ . "/../server/get_location.php";
+
+$geoData = get_location_data();
+
+if (isset($geoData['error'])) {
+    echo "Error: " . $geoData['error'];
+    exit;
+}
+
+$latitude = $geoData['latitude'];
+$longitude = $geoData['longitude'];
+$clientIp = $geoData['ip'];
 ?>
 
 <!DOCTYPE html>
