@@ -1,12 +1,11 @@
 <?php
 require_once __DIR__ . "/../server/get_location.php";
 
-header('Content-Type: application/json');
+$geoData = get_location_data();
 
-$geoData = get_location_data(); 
-
-if (!$geoData) {
-    $geoData = ['ip' => 'Unknown', 'latitude' => '0', 'longitude' => '0'];
+if (isset($geoData['error'])) {
+    echo "Error: " . $geoData['error'];
+    exit;
 }
 
 $latitude = $geoData['latitude'];
