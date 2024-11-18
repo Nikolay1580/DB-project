@@ -7,7 +7,7 @@ loadDotEnv(__DIR__ . "/.env");
 $apiKey = getenv("API_Key");
 
 if ($Server[""])
-    $clientIp = $_SERVER['REMOTE_ADDR'];
+    $clientIp = getUserIP();
 
     $geoUrl = "https://ipinfo.io/{$clientIp}/json?token={$ipinfoToken}";
     $geoData = json_decode(file_get_contents($geoUrl), true);
