@@ -42,6 +42,7 @@ include './docs/access_log.php';
             <a href="./docs/client/GDPR.php">GDPR</a>
             <a href="./docs/client/Login_page.php">Log In</a>
             <a href="./docs/client/Register_page.php">Register</a>
+            <a href="./docs/client/map.php">Where am I</a>
         </div>
     </div>
 
